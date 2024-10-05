@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Ayman Ya",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 96.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -118.4,
+      "left": -13.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 348.8,
+      "left": -56.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 73.4,
+      "left": 355.2,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-48", "v316.9" ] ],
+    [ "lcd1:SDA", "uno:A4", "yellow", [ "h-67.2", "v317", "h326.4" ] ],
+    [ "lcd1:SCL", "uno:A5", "orange", [ "v384.3", "h264.5" ] ],
+    [ "ldr1:AO", "uno:A0", "green", [ "h0" ] ],
+    [ "ldr1:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "ldr1:VCC", "uno:5V", "red", [ "h-76.8", "v240" ] ],
+    [ "btn1:1.l", "uno:2", "#8f4814", [ "h0" ] ],
+    [ "btn1:2.l", "uno:GND.3", "black", [ "h0", "v269", "h-115.2" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-19.2", "v163.2", "h144" ] ]
+  ],
+  "dependencies": {}
+}
